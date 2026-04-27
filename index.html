@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad — Music Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="player-shell">
+
+    <!-- LEFT: Player Controls -->
+    <div class="left-panel">
+      <div class="app-label">Ahmad</div>
+
+      <div class="album-art-wrapper">
+        <div class="album-art" id="albumArt">
+          <span id="albumEmoji">🎵</span>
+        </div>
+        <div class="album-art-overlay"></div>
+      </div>
+
+      <div class="song-info">
+        <div class="song-title" id="songTitle">Select a Track</div>
+        <div class="song-artist" id="songArtist">— Artist —</div>
+      </div>
+
+      <div class="progress-area">
+        <div class="time-row">
+          <span id="currentTime">0:00</span>
+          <span id="totalTime">0:00</span>
+        </div>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="ctrl-btn" id="prevBtn" title="Previous">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+          </svg>
+        </button>
+
+        <button class="ctrl-btn play-btn" id="playBtn" title="Play/Pause">
+          <svg id="playIcon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+
+        <button class="ctrl-btn" id="nextBtn" title="Next">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 18l8.5-6L6 6v12zm2.5-6l5.5 4V8l-5.5 4zM16 6h2v12h-2z"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="volume-row">
+        <svg class="vol-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+        </svg>
+        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="0.8">
+      </div>
+    </div>
+
+    <!-- RIGHT: Playlist -->
+    <div class="right-panel">
+      <div class="playlist-header">
+        <div style="display:flex; align-items:center; gap:8px;">
+          <span class="playlist-title">PLAYLIST</span>
+          <div class="viz" id="viz">
+            <div class="viz-bar"></div>
+            <div class="viz-bar"></div>
+            <div class="viz-bar"></div>
+            <div class="viz-bar"></div>
+            <div class="viz-bar"></div>
+          </div>
+        </div>
+        <span class="track-count" id="trackCount">10 tracks</span>
+      </div>
+
+      <div class="playlist" id="playlist"></div>
+
+      <div class="waveform-deco" id="waveformDeco"></div>
+    </div>
+
+  </div>
+
+  <audio id="audioEl"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
